@@ -1,0 +1,20 @@
+CREATE TABLE clothing_shop (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, color TEXT, price INTEGER);
+
+INSERT into clothing_shop VALUES (1, "shirt", 3, "red", 15);
+INSERT into clothing_shop VALUES (2, "pants", 11, "blue", 12);
+INSERT into clothing_shop VALUES (3, "skirt", 20, "green", 15);
+INSERT into clothing_shop VALUES (4, "shoes", 16, "black", 22);
+INSERT into clothing_shop VALUES (5, "shoe_lace", 20, "white", 18);
+INSERT into clothing_shop VALUES (6, "hat", 22, "green", 16);
+INSERT into clothing_shop VALUES (7, "belt", 47, "black", 23);
+INSERT into clothing_shop VALUES (8, "socks", 47, "teal", 32);
+INSERT into clothing_shop VALUES (9, "glasses", 82, "green", 18);
+INSERT into clothing_shop VALUES (10, "bra", 91, "pink", 53);
+INSERT into clothing_shop VALUES (11, "sweaters", 51, "black", 26);
+INSERT into clothing_shop VALUES (12, "undershirt", 39, "white", 12);
+INSERT into clothing_shop VALUES (13, "underwear", 23, "orange", 23);
+INSERT into clothing_shop VALUES (14, "watch", 13, "gray", 34);
+INSERT into clothing_shop VALUES (15, "rings", 32, "silver", 33);
+
+SELECT color, SUM(price) FROM clothing_shop GROUP BY color;
+SELECT * FROM clothing_shop;

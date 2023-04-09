@@ -1,0 +1,29 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE entrepreneurs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    reason TEXT);
+    
+INSERT INTO entrepreneurs (fullname, age, reason) VALUES ("Beyonce Knowles", 41, "singer");
+INSERT INTO entrepreneurs (fullname, age, reason) VALUES ("Oprah Winfrey", 69, "actress");
+INSERT INTO entrepreneurs (fullname, age, reason) VALUES ("Susan Wojcicki", 54, "creator");
+INSERT INTO entrepreneurs (fullname, age, reason) VALUES ("Sophia Amoruso", 38, "author");
+INSERT INTO entrepreneurs (fullname, age, reason) VALUES ("Arianna Huffington", 72, "publisher");
+
+CREATE TABLE wealth (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    entrepreneurs_id INTEGER,
+    net_worth TEXT);
+    
+INSERT INTO wealth (entrepreneurs_id, net_worth) VALUES (1, "440 million");
+INSERT INTO wealth (entrepreneurs_id, net_worth) VALUES (2, "2.6 billion");
+INSERT INTO wealth (entrepreneurs_id, net_worth) VALUES (3, "815 million");
+INSERT INTO wealth (entrepreneurs_id, net_worth) VALUES (4, "25 million");
+INSERT INTO wealth (entrepreneurs_id, net_worth) VALUES (5, "100 million" );
+
+SELECT entrepreneurs.fullname, wealth.net_worth
+FROM entrepreneurs
+JOIN wealth
+ON entrepreneurs.id = wealth.entrepreneurs_id;
